@@ -66,10 +66,17 @@ async function setup(ctx) {
   try {
     const skills = collectSkills()
     await ctx.skill.transform((draft) => {
-      for (const skill of skills) {
-        try { draft.add(skill) } catch (err) {
-          console.error(`[vox-motion-graphics-v4] skill "${skill.id}" rejected by host, skipping:`, err)
+      // Draft API differs by host: 2.x exposes add(skill), some 1.x drafts take source(dir).
+      if (typeof draft?.add === 'function') {
+        for (const skill of skills) {
+          try { draft.add(skill) } catch (err) {
+            console.error(`[vox-motion-graphics-v4] skill "${skill.id}" rejected by host, skipping:`, err)
+          }
         }
+      } else if (typeof draft?.source === 'function') {
+        draft.source(skillsDir)
+      } else {
+        console.error('[vox-motion-graphics-v4] no known skill draft API; relying on config hook')
       }
     })
   } catch (err) {
