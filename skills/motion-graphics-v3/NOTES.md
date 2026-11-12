@@ -3,7 +3,7 @@
 Add every note the user gives on a V3 edit here as a dated rule, with why. Read this file before every V3 build.
 
 ## 2026-11-08 — environment note (Termux on Android, this machine)
-The skill ships as the OpenCode plugin `vox-motion-graphics-v4` (after `opencode plugin add` it lives under
+The skill ships as the OpenCode plugin `vox-motion-graphics-v4` (after `opencode plugin <git-spec> --global` it lives under
 `~/.cache/opencode/packages/`; `~/.claude/skills/motion-graphics-v3` is a symlink into it; `tools/env.sh` resolves
 its own location, so everything works from anywhere). Machine specifics a build must respect:
 - Python: Termux 3.14 venv at `~/.cache/motion-graphics-v3/venv` (system-site: numpy/onnxruntime/scipy/pillow/torch

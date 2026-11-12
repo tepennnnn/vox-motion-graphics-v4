@@ -7,7 +7,7 @@ OpenCode plugin packaging the "motion graphics V3" editorial story pipeline (voi
 ## Install
 
 ```
-opencode plugin add 'vox-motion-graphics-v4@git+https://github.com/tepennnnn/vox-motion-graphics-v4.git#main'
+opencode plugin 'vox-motion-graphics-v4@git+https://github.com/tepennnnn/vox-motion-graphics-v4.git#main' --global
 ```
 
 ## Upgrade

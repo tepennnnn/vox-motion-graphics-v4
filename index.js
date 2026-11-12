@@ -24,7 +24,7 @@ function readFrontmatter(raw) {
       while (i + 1 < lines.length && /^(\s{2,}|\t)/.test(lines[i + 1])) block.push(lines[++i].trim())
       val = block.join(' ')
     }
-    meta[key] = val.replace(/^["']|["']$/g, '')
+    meta[key] = (val.length > 1 && ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'")))) ? val.slice(1, -1) : val
   }
   return { frontmatter: meta, content: raw.slice(m[0].length) }
 }
@@ -54,7 +54,7 @@ export const VoxMotionGraphicsV4Plugin = async () => ({
   config: async (config) => {
     if (Array.isArray(config.skills)) return // V2 host: setup() registers skills instead
     config.skills = config.skills || {}
-    config.skills.paths = config.skills.paths || []
+    if (!Array.isArray(config.skills.paths)) config.skills.paths = []
     if (!config.skills.paths.includes(skillsDir)) config.skills.paths.push(skillsDir)
   },
 })
