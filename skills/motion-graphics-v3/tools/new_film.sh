@@ -1,7 +1,7 @@
 #!/bin/bash
 # New MG V3 film project.  usage: new_film.sh <dir> [9x16|16x9]
 set -e
-D="$1"; F="${2:-9x16}"; SK="${MGV3:-$HOME/.claude/skills/motion-graphics-v3}"
+D="$1"; F="${2:-9x16}"; SK="${MGV3:-$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)}"
 mkdir -p "$D"/{assets/v3,assets/fonts,assets/img,assets/video,assets/audio,assets/sfx,assets/vendor,work,renders}
 cp "$SK/kit/kit.js" "$D/assets/v3/"; cp "$SK"/kit/fonts/*.woff2 "$D/assets/fonts/"; cp "$SK"/kit/img/* "$D/assets/img/"
 cp "$SK"/kit/sfx/* "$D/assets/sfx/"; cp "$SK/kit/vendor/gsap.min.js" "$D/assets/vendor/"

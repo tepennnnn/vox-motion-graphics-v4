@@ -8,7 +8,7 @@ python3 build.py  ->  index.html (+ work/sound.json cues)
 import sys, json, math
 from pathlib import Path
 import os
-sys.path.insert(0, str(Path(os.environ.get('MGV3', Path.home() / '.claude/skills/motion-graphics-v3')) / 'kit'))
+sys.path.insert(0, str(Path(os.environ.get('MGV3', Path(__file__).resolve().parents[1])) / 'kit'))
 from v3lib import (Film, W, odo, barcode, qr, pen_path, svg, plus, esc, ext, letters, ribbon_svg, wordsearch, selbox,
                    phone, blots, vcut)
 

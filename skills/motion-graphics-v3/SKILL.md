@@ -74,8 +74,8 @@ in mixed type, a pen arrow, a highlighter on the real page. Monochrome everywher
 - Publish nothing.
 
 ## Workflow
-Every step: `source ~/.claude/skills/motion-graphics-v3/tools/env.sh` (picks the local Python envs; on a fresh machine run
-`tools/setup.sh` once). `SK=~/.claude/skills/motion-graphics-v3`.
+Every step: `source "<this skill's directory>/tools/env.sh"` (picks the local Python envs; on a fresh machine run
+`tools/setup.sh` once). env.sh resolves its own location and sets `MGV3`; use `SK="$MGV3"`.
 
 0. **Project:** `bash $SK/tools/new_film.sh <dir> 9x16` (or `16x9` for long form).
 1. **Story + script** (`work/script.json`): 12–18 short lines, one beat each, ~2.5 words/s; hook line first ("Nobody
