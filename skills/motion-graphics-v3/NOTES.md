@@ -24,6 +24,8 @@ its own location, so everything works from anywhere). Machine specifics a build 
 - Self-test proven end-to-end on 2026-11-08: `~/motion-graphics-v3/_selftest/renders/selftest.mp4` (TTS → align →
   build → check 0 errors → render → mix → mux). Contact sheets can't be *looked at* by the assistant's model,
   so pixel-level review is the user's job — show them progress mp4s.
+- 2026-11-12: npx shebang unusable on this Termux (android arm64): run hyperframes via `node <dist>/bin/hyperframes.mjs` instead.
+- 2026-11-12: Headless Chromium: set `HYPERFRAMES_BROWSER_PATH=/data/data/com.termux/files/usr/bin/chromium-browser` when hyperframes needs a browser.
 
 
 - 2026-10-26 (brief): "full motion graphic", real images "at once or multiple times", go online and grab real things,

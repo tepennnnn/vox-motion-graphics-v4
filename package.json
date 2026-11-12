@@ -1,6 +1,6 @@
 {
   "name": "vox-motion-graphics-v4",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vox motion graphic v4 - the MG V3 editorial story motion-graphics pipeline (Kokoro voice, wav2vec2 alignment, HyperFrames render) as an upgradable OpenCode plugin",
   "type": "module",
   "main": "index.js",
