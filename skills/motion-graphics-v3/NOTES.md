@@ -49,3 +49,5 @@ its own location, so everything works from anywhere). Machine specifics a build 
    banknotes spin in, a chart line draws through the stat, a word is found in a word-search, letters assemble.
 5. **Colour worlds change scene to scene** (clay, ivory, slate, sky photo, black, grey) — never two monochrome worlds
    in a row; heavy EXTRUDED type (`ext()`, Archivo Black / Anton) for headlines.
+
+2026-11-12 — shipped as plugin `vox-motion-graphics-v4` v0.1.0; loose copies retired; `~/.claude/skills/motion-graphics-v3` now points into the plugin cache.
